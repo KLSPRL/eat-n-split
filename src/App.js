@@ -58,7 +58,7 @@ export default function App() {
         <Button className="button" onClick={handleShowAddFriend}>{showAddFriend ? "Close" : "Add Friend"}</Button>
 
       </div>
-      {selectedFriend && < FormSplitBill selectedFriend={selectedFriend} onSplitBill={handleSplitBill} />}
+      {selectedFriend && < FormSplitBill selectedFriend={selectedFriend} onSplitBill={handleSplitBill} key={selectedFriend.id} />}
     </div>
   );
 }
@@ -76,6 +76,7 @@ const FriendList = ({ friends, onSelection, selectedFriend }) => {
     </ul>
   );
 }
+
 const Friend = ({ friend, onSelection, selectedFriend }) => {
   const isSelected = selectedFriend?.id === friend.id;
   return (
